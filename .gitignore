@@ -1,0 +1,6 @@
+# Ignore API key file
+APIKEY.key
+
+# Ignore PHP files that should not be committed
+*.log
+*.tmp
