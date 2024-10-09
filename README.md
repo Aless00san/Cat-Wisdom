@@ -24,7 +24,7 @@ If you want to replicate the project make sure you have the following installed:
 - Build and run the php file (for develop) : <br> 
   `php -S localhost:8000.`
 
-Then your app will be hosted at http://localhost:8080 
+Then your app will be hosted at http://localhost:8000 
 
 ## How to add an API key
 
