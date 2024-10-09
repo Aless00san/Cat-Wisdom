@@ -16,8 +16,12 @@ const API_URL = "https://api.thecatapi.com/v1/images/search";
 $ch = curl_init(API_URL);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-// We retrieve the API KEY from our hidden file
-$apiKey = file_get_contents('APIKEY.key');
+// Uncomment this line to use the local APIKEY.key file
+// $apiKey = file_get_contents('APIKEY.key');
+
+// This line retrieves the API key from the environment variables
+// Comment it if you plan to use the local APIKEY.key file
+$apiKey = $_ENV['API_KEY'];
 
 // We add our API key to the request
 $headers = [
