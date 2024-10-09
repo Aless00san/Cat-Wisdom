@@ -68,4 +68,4 @@ The Cat API requires an API key to authenticate requests and ensure that the API
 #### Production 
 - Set an environment variable named API_KEY with your actual API key as its value.
 
- For more information about The Cat API and their API key requirements, please visit [The Cat API Documentation]([https://thecatapi.com/docs](https://developers.thecatapi.com))
+ For more information about The Cat API and their API key requirements, please visit [The Cat API Documentation](https://developers.thecatapi.com)
