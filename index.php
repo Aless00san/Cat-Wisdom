@@ -1,6 +1,8 @@
 <?php
 const CATAPI_LOGO = 'https://thecatapi.com/_app/immutable/assets/thecatapi-logo.78868573.svg';
 const CATAPI_URL = 'https://thecatapi.com';
+
+define('ENVIRONMENT', 'production');
 ?>
 
 <head>
@@ -16,12 +18,12 @@ const API_URL = "https://api.thecatapi.com/v1/images/search";
 $ch = curl_init(API_URL);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-// Uncomment this line to use the local APIKEY.key file
-// $apiKey = file_get_contents('APIKEY.key');
-
-// This line retrieves the API key from the environment variables
-// Comment it if you plan to use the local APIKEY.key file
-$apiKey = $_ENV['API_KEY'];
+// Retrieve API_KEY according to environmet 
+if (ENVIRONMENT === 'production') {
+    $apiKey = $_ENV['API_KEY'];
+} else {
+    $apiKey = file_get_contents('APIKEY.key');
+}
 
 // We add our API key to the request
 $headers = [
