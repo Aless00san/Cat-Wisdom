@@ -2,7 +2,16 @@
 const CATAPI_LOGO = 'https://thecatapi.com/_app/immutable/assets/thecatapi-logo.78868573.svg';
 const CATAPI_URL = 'https://thecatapi.com';
 
-define('ENVIRONMENT', 'production');
+enum Environment: int
+{
+    case PRODUCTION = 1;
+    case DEVELOPMENT = 2;
+}
+
+// Edit this line to set the environment
+// Environment::PRODUCTION is the default
+// Environment::DEVELOPMENT is for development purposes
+define('ENVIRONMENT', Environment::PRODUCTION);
 ?>
 
 <head>
@@ -19,7 +28,7 @@ $ch = curl_init(API_URL);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 // Retrieve API_KEY according to environmet 
-if (ENVIRONMENT === 'production') {
+if (ENVIRONMENT === Environment::PRODUCTION) {
     $apiKey = $_ENV['API_KEY'];
 } else {
     $apiKey = file_get_contents('APIKEY.key');
